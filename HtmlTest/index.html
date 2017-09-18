@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试页面</title>
+
+	<link type="text/css" href="css/jquery.ui.css" rel="stylesheet"/>
+	<link type="text/css" href="css/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
+	<link type="text/css" href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+</head>
+<body>
+	<div>
+		<input style="width:120px;" class="txt date" type="text" value="" id="query_start_time" name="query_start_time">
+        <label for="query_start_time">~</label>
+        <input style="width:120px;" class="txt date" type="text" value="" id="query_end_time" name="query_end_time">
+	</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> 
+<script type="text/javascript" src="js/jquery.ui.js"></script> 
+<script type="text/javascript" src="js/zh-CN.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-zh-CN.js"></script>
+<script>
+    $(function(){
+        // 初始化日期选择插件
+        $('#query_start_time').datetimepicker({showSecond: true, timeFormat: 'hh:mm:ss', stepHour: 1, stepMinute: 1, stepSecond: 1});
+        $('#query_end_time').datetimepicker({showSecond: true, timeFormat: 'hh:mm:ss', stepHour: 1, stepMinute: 1, stepSecond: 1});
+    });
+</script>
+</html>

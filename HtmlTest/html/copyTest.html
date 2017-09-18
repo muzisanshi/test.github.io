@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<input type="text" name="" id="iUrl" value="https://github.com/zeroclipboard/zeroclipboard">
+	<button id="copyUrlBtn">复制链接</button>
+</body>
+<script type="text/javascript" src="../js/ZeroClipboard.js"></script>
+<script type="text/javascript">
+		var btn = document.getElementById('copyUrlBtn');
+    	text = document.getElementById('iUrl');
+    	zc = new ZeroClipboard(btn);
+	    zc.on('beforecopy', function(e){
+	        zc.setText(text.value);
+	    });
+	    btn.onclick = function(){
+	        alert('已复制');
+	    };
+</script>
+</html>

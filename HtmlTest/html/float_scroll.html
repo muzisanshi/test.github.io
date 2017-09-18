@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>float_scroll测试</title>
+	<style type="text/css">
+		*{padding: 0px;margin: 0px;}
+		html,body{width: 100%;height: 100%;padding: 0px;margin: 0px;}
+	</style>
+	<style type="text/css">
+		.goods-list{width: 500px;height: 150px;overflow-x: scroll;display: none;}
+		.goods-list .goods-item{width: calc(50%);height: calc(100%);padding: 10px;display: inline-block;float: left;}
+		.goods-list .goods-item > img{width: 100%;display: block;}
+		.goods-list .goods-item label:first-child{font-size: 16px;display: block;}
+		.goods-list .goods-item > div{font-size: 16px;color: red;}
+	</style>
+</head>
+<body>
+	<div class="goods-list">
+		<div class="goods-item">
+			<img src="http://192.168.3.76/data/upload/shop/store/goods/1049/2016/08/30/1049_05258845475981025_240.jpg">
+			<label>草你妈草你妈</label>
+			<div>
+				￥25.00
+			</div>
+		</div><!--  --><div class="goods-item">
+			<img src="http://192.168.3.76/data/upload/shop/store/goods/1049/2016/08/31/1049_05259543633620966_240.jpg">
+			<label>草你妈草你妈</label>
+			<div>
+				￥25.00
+			</div>
+		</div><!--  --><div class="goods-item">
+			<img src="http://192.168.3.76/data/upload/shop/store/goods/1049/2016/11/01/1049_05313134738313972_240.jpg">
+			<label>草你妈草你妈</label>
+			<div>
+				￥25.00
+			</div>
+		</div>
+	</div>
+
+	<div style="width: 350px;height: 100px;overflow-x:scroll;overflow-y:hidden;white-space: nowrap;">
+		<ul style="height: 100px;background-color: gray;">
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: blue;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: red;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: blue;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: red;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: blue;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: red;"></li>
+			<li style="width: 100px;height: 100px;display: inline-block;background-color: blue;"></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	// dom加载完毕后执行 
+	$(function(){
+		
+	});
+</script>
+</html>

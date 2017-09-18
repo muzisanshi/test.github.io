@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动画测试</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<style type="text/css">
+		.main{margin-top: 50px;width: 80%;margin-left: 10%;position: relative;}
+		.list_buoy {position:absolute;left:0;bottom:-1px;display:block;height:1px;width:calc(100% / 2);-webkit-transition:left .3s .15s ease-in-out;transition:left .3s .15s ease-in-out;}
+        .list_buoy b {display:block;height:2px;width:100%;background-color:#7057aa;}
+
+        .buoy_0 {left: 0%;}
+        .buoy_1 {left: 50%;}
+
+        .main button{top: 50px;position: absolute;}
+
+        .deng{position: relative;display: inline-block;left: 0;width: 100px;height: 100px;background-color: blue;-webkit-transition:left 1s 0.5s ease-in-out;transition:left 1s 0.5s ease-in-out;}
+        .deng button{width: 100%;height: 100%;border-radius: 50%;background-color: green;color: white;}
+        .move{left: -10%;}
+
+
+        .login-div{width: 100%;background-color: yellow;}
+
+        .s-item{width: 33.33%;position: relative;display: inline-block;left: 0;-webkit-transition:left 1s ease-in-out;transition:left 1s ease-in-out;background-color: blue;}
+        .s-btn{background-color: green;color: white;border-radius: 50%;width: 200px;transform:scale(1);-webkit-transition:transform 1s ease-in-out;transition:transform 1s ease-in-out;}
+        .left{left: 0;}
+        .right{left: 33.33%;}
+
+        .z-big{transform:scale(1.5);}
+        .c-width{width: 50px;}
+	</style>
+</head>
+<body>
+	<!-- <div class="main">
+		<div id="buoy" class="list_buoy"><b></b></div>
+		<div class="deng">
+			<button>登</button>
+		</div>
+		<div></div>
+		<button id="exec">执行动画</button>
+	</div> -->
+
+	<div class="login-div">
+        <div class="s-item">
+        	<button class="s-btn">登</button>
+        </div>
+    </div>
+
+    <button id="exec">执行动画</button>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#exec").click(function(){
+			// $("#buoy").addClass("buoy_1");
+			// $(".deng").addClass("move");
+			$(".s-item").addClass("right");
+			// $(".s-btn").addClass("c-width");
+			$(".s-btn").addClass("z-big");
+		});
+
+		// 调整样式
+        var btnWidth = $(".s-btn").width();
+        $(".s-btn").height(btnWidth+"px");
+        console.log("btnWidth的值："+btnWidth);
+
+		$(".s-btn").click(function(){
+            if($(this).index() == 0){
+                $(this).parent().addClass("right");
+                // $(this).addClass("c-width");
+                $(this).addClass("z-big");
+            }
+        });
+	});
+</script>
+</html>

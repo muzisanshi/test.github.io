@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>正则表达式</title>
+</head>
+<body>
+	<div>
+		<div>表达式：<input type="text" id="reg"></input></div>
+		<div>字符串：<input type="text" id="source"></input></div>
+		<div><button id="pei">匹配</button></div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#pei").click(function(){
+			var reg = $("#reg").val();
+			var source = $("#source").val();
+			if(reg && source){
+				var regExp = new RegExp(reg);
+				if(regExp.test(source)){
+					alert("匹配成功！");
+				}else{
+					alert("匹配不成功！");
+				}
+			}else{
+				alert("输入不能为空！");
+			}
+		});
+	});
+</script>
+</html>

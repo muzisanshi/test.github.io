@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>flex测试</title>
+	<style type="text/css">
+	html,body{width: 100%;padding: 0;margin: 0;background-color: #F7F7F7;}
+
+	.item{padding: 20px;border-bottom: 1px solid #e5e5e5;width: calc(100% - 40px);background-color: white;user-select:none;}
+	.item div{width: 100%;background-color: white;display: flex;}
+	.item-title{display: block;float: left;flex: 1;padding-right: 10px;background-color: white;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;font-size: 16px;}
+	.item-arrow{display: block;float: left;width: 10px;height: 10px;background-color: white;text-align: center;border-top: 2px solid #e5e5e5;border-right: 2px solid #e5e5e5;transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);position: relative;top: 5px;}
+	.item-arrow::after{clear: both;}
+	
+	</style>
+</head>
+<body>
+	<div style="height: 200px;"></div>
+	<div style="margin: 0 auto;width: 50%;">
+
+		<div class="item">
+			<div>
+				<label class="item-title">设置</label>
+				<i class="item-arrow"></i>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>checkbox测试</title>
+	<style type="text/css">
+		html,body{width: 100%;height: 100%;padding: 0px;margin: 0px;}
+	</style>
+</head>
+<body>
+
+	<!-- 按钮区域 -->
+	<div style="width: 100%;text-align: center;margin-top: 20px;">
+		<input type="checkbox" id="check1" />check1
+		<input type="checkbox" id="check2" />check2
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	// dom加载完毕后执行 
+	$(function(){
+		$("#check1").click(function(){
+			if($(this).is(":checked")){
+				$("#check2").attr("checked",true);
+			}else{
+				$("#check2").attr("checked",false);
+			}
+		});
+	});
+</script>
+</html>

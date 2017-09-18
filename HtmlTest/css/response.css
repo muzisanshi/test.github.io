@@ -1,0 +1,19 @@
+@media (max-width: 200px){
+	.response{
+		width: 80%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: red;
+	}
+}
+
+@media (min-width: 201px){
+	.response{
+		width: 80%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: green;
+	}
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片上传测试</title>
+</head>
+<body>
+	<input style="margin-top: 100px;" type="file" id="imgFile" name="images" multiple="true" required="true"></input>
+
+	<div style="margin-top: 100px;">
+		<button id="upload">上传</button>
+	</div>
+</body>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		var upload = function(formData,callback){
+			console.log("formData是："+formData);
+			if(formData){
+				$.ajax({
+	                type:"post",
+	                url:"http://app.egezi.cn/auto/images/?token=3iiek0ydvf3orryt8s37uznv44oiiz24",
+	                data:formData,
+	                // dataType:"json",
+	                cache: true,
+	                contentType:false,
+	                processData: false,
+	                success:function(ret){
+	                    console.log("上传返回："+JSON.stringify(ret));
+	                    callback(ret,null);
+	                },
+	                error:function(err){
+	                	callback(null,err);
+	                    // app.toast("上传图片失败！");
+	                }
+	            });
+			}
+		}
+
+		$("#upload").click(function(){
+			var fileObj = document.getElementById("imgFile");
+            var formData = new FormData();
+            if (!new RegExp("image/*").test(fileObj.files[0].type)){
+                alert("您选择的文件不是图片");
+                return;
+            }
+            // console.log("要上传的图片是："+app.printObj(fileObj.files[0]));
+            formData.append("images",fileObj.files[0]);
+
+            // 上传图片
+            upload(formData,function(ret,err){
+                if(err){
+                    console.log("11111111111："+JSON.stringify(err));
+                    ids = null;
+                    alert("上传图片失败！");
+                    return;
+                }
+                if(ret && ret.code != 0){
+                    console.log("2222222222");
+                    ids = null;
+                    alert("上传图片失败！");
+                    return;
+                }
+                // // 保存图片ID
+                // ids = ret.data.image_id_list;
+                // var urls = ret.data.urls;
+                // $("#picture").attr("src",urls[0].url);
+
+                // // 隐藏添加按钮，显示图片区域
+                // $(".img-add").hide();
+                // $(".img").show();
+            });
+		});
+	});
+</script>
+</html>

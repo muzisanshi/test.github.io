@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试监听滚动事件</title>
+	<style type="text/css">
+		img{width: 100%;display: block;}
+	</style>
+</head>
+<body>
+	<div id="scrollW" style="width: 300px;height: 700px;overflow: scroll;">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+		<img src="http://img.taopic.com/uploads/allimg/130419/240438-13041ZG14971.jpg">
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#scrollW").on("scroll",function(){
+			console.log("滚动了");
+		});
+	});
+</script>
+</html>

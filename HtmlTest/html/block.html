@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>局部页面</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		*{padding: 0px;margin: 0px;outline: none;border: none;background: none;}
+		html,body{width: 100%;}
+
+		/*主要样式*/
+		.wrapper{width: calc(100% - 20px);padding: 10px;}
+		.content{width: calc(100% - 40px);border: 1px solid #DFDFDF;padding: 20px;padding-bottom: 160px;}
+
+		.h20{width: 100%;height: 20px;}
+		.h40{width: 100%;height: 40px;}
+		.light-blue{background-color: #CDE7F9;}
+		.head-txt{width: 100px;display: inline-block;margin-right: 10px;line-height: 30px;}
+
+		.order-name{width: 100%;}
+		.order-name label{font-size: 14px;}
+
+		.order-goods{width: 100%;}
+		.order-goods .goods-item{width: 100%;}
+		.goods-item .name-wrapper{position: relative;display: inline-block;width: 600px;margin-right: 20px;}
+		.goods-item input{height: 30px;font-size: 16px;padding-left: 10px;border: 1px solid #C5C5C5;margin-right: 20px;}
+		.goods-item .goods-name-input{width: calc(100% - 41px);padding-right: 30px;}
+		.goods-item .delete{width: 20px;position: absolute;top: 6px;right: 5px;}
+		.goods-item .goods-num-title{margin-right: 20px;}
+		.goods-item button{width: 32px;height: 32px;border: 1px solid #C5C5C5;font-size: 20px;color: #C5C5C5;vertical-align: top;display: inline-block;}
+		.goods-item .minus{border-right: none;}
+		.minus:active{background-color: #eeeeee;}
+		.goods-item .goods-num{width: 40px;margin-right: 0px;display: inline-block;text-align: center;padding-left: 0px;}
+		.goods-item .add{border-left: none;}
+		.add:active{background-color: #eeeeee;}
+
+		.add-goods{width: 100%;}
+		.add-goods label{position: relative;top: -4px;}
+		.body,.logitics,.weight,.receiver,.sender{width: 100%;position: relative;}
+		.body select{width: calc(600px / 2 - 70px);vertical-align: top;height: 30px;border: 1px solid #C5C5C5;position: relative;top: -2px;font-size: 16px;}
+		.body .order-num{width: calc(600px / 2 - 80px);vertical-align: top;height: 30px;border: 1px solid #C5C5C5;position: relative;top: -2px;font-size: 16px;padding-left: 10px;}
+		.body .address{width: calc(600px - 40px);vertical-align: top;height: 30px;border: 1px solid #C5C5C5;position: relative;top: -2px;font-size: 16px;padding-left: 10px;padding-right: 30px;}
+		.body .new{position: absolute;right: 10px;color: #2F90DC;top: 1px;}
+		.new:active{color: #1563CE;}
+		.ask{float: left;position: relative;left: 10px;}
+		.ask-info{padding: 20px;}
+		.ask-info > label{display: block;margin-bottom: 5px;}
+		.ask-info > label:last-child{margin-top: 15px;}
+		.ask-info > label > span:nth-child(1){display: inline-block;width: 200px;}
+		.ask-info > label:last-child > span:nth-child(2){color: red;font-size: 22px;}
+
+		.btns{width: 100%;text-align: center;}
+		.btns button{padding: 10px 15px;border: 1px solid #c5c5c5;font-size: 14px;}
+		.btns button:active{background-color: #eeeeee;color: black;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="content">
+			<div class="order-name">
+				<label>包裹单1</label>
+			</div>
+			<div class="h20"></div>
+			<div class="order-goods">
+				<div class="goods-item">
+					<label class="head-txt">内件物品1</label>
+					<label class="name-wrapper">
+						<input class="goods-name-input" type="text" placeholder="请输入商品名">
+						<img class="delete" src="../images/delete.png" style="display: none;">
+					</label>
+					<label class="goods-num-title">数量</label>
+					<div style="margin-right: 20px;display: inline-block;">
+						<button class="minus">-</button><!-- 不要删除该注释 --><input class="goods-num" type="text" value="0"></input><!-- 不要删除该注释 --><button class="add">+</button>
+					</div>
+
+					<label class="pure-weight">净重量：<span>--</span></label>
+				</div>
+				<div class="h20"></div>
+				<div class="goods-item">
+					<label class="head-txt">内件物品1</label>
+					<label class="name-wrapper">
+						<input class="goods-name-input light-blue" type="text" value="【德国直邮】Salus Floradix 沙露丝 铁元 口服液 红铁 500ml4个 postNL包邮不包税">
+						<img class="delete" src="../images/delete.png">
+					</label>
+					<label class="goods-num-title">数量</label>
+
+					<div style="margin-right: 20px;display: inline-block;">
+						<button class="minus">-</button><!-- 不要删除该注释 --><input class="goods-num" type="text" value="0"></input><!-- 不要删除该注释 --><button class="add">+</button>
+					</div>
+
+					<label class="pure-weight">净重量：<span>0.05kg</span></label>
+				</div>
+			</div>
+			<div class="h20"></div>
+			<div class="add-goods">
+				<div class="title">
+					<img src="../images/add.png">
+					<label style="">新增商品</label>
+				</div>
+				<div class="h20"></div>
+				<div class="body">
+					<div style="float: left;">
+						<div class="logitics">
+							<label class="head-txt">境外段物流</label>
+							<select style="margin-right: 20px;">
+								<option>DHL寄送至国外</option>
+							</select>
+
+							<label class="head-txt">选择清关路线</label>
+							<select>
+								<option>
+									邮政个人快速清关
+								</option>
+							</select>
+						</div>
+						<div class="h20"></div>
+						<div class="weight">
+							<label class="head-txt">包裹总重量</label>
+							<select style="margin-right: 20px;">
+								<option>
+									小于等于1KG
+								</option>
+							</select>
+
+							<label class="head-txt">三方订单号</label>
+							<input class="order-num" type="text" value="0123456789"></input>
+						</div>
+						<div class="h20"></div>
+						<div class="receiver">
+							<label class="head-txt">收件人</label>
+							<label>
+								<input class="address" type="text" placeholder="输入收件地址关键字"></input>
+								<button class="new">新增</button>
+							</label>
+						</div>
+						<div class="h20"></div>
+						<div class="sender">
+							<label class="head-txt">发件人</label>
+							<label>
+								<input class="address" type="text" placeholder="输入收件地址关键字"></input>
+								<button class="new">新增</button>
+							</label>
+						</div>
+					</div>
+					<div class="ask" style="">
+						<img src="../images/ask.png">
+						<div class="ask-info">
+							<label><span>总重量：</span><span>0kg</span></label>
+							<label><span>申报总价值：</span><span>￥0.00</span></label>
+							<label><span>RMB税费预估：</span><span>￥0.00</span></label>
+							<label><span>境内运输费：</span><span>￥0.00</span></label>
+							<label><span>合计费用（包邮包税）：</span><span>￥0.00</span></label>
+						</div>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			<div class="h40"></div>
+			<div class="btns">
+				<button>生成包裹</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

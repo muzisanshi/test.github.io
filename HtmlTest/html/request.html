@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax请求测试</title>
+</head>
+<body>
+	<div style="margin-top: 200px;">
+		<button id="req">发送请求</button>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	// dom加载完毕后执行 
+	$(function(){
+		$("#req").click(function(){
+
+			$.ajax({
+				type:"POST",
+				url:"http://192.168.1.90/gumajia/index.php?act=goods&op=addGoods&token=94724_450539cd83a3bc489bba6cacbf9d27cd",
+				data:{
+					goods_image:'["http://img3.imgtn.bdimg.com/it/u=1076064835,2335084928&fm=26&gp=0.jpg","http://img3.imgtn.bdimg.com/it/u=1076064835,2335084928&fm=26&gp=0.jpg"]',
+					goods_storage:"11111"
+				},
+				success:function(ret){
+					alert("成功返回："+JSON.stringify(ret));
+				},
+				error:function(err){
+					alert("失败返回："+JSON.stringify(err));
+				}
+			});
+		});
+	});
+</script>
+</html>
